@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import ToDo from "../componenets/ToDo";
-import { actionCreators } from "../store";
+import { add } from "../store";
 function Home({ toDos, addToDo }) {
   // 남아있는 props(추출하지않은 props를 확인할때 사용) props대신에 {...rest} 이렇게 넣어둠
   // console.log(rest);
@@ -45,7 +45,7 @@ function getCurrentState(state, ownProps) {
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
-  return { addToDo: (text) => dispatch(actionCreators.addToDo(text)) };
+  return { addToDo: (text) => dispatch(add(text)) };
 }
 
 // connect store.js에 있는 data를 현재 Home.js로 연결해서 사용가능하게 해줌

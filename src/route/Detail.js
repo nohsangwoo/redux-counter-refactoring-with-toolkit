@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { actionCreators } from "../store";
+import { remove } from "../store";
 // import { useParams } from "react-router-dom";
 
 function Detail({ toDo, onBtnClick }) {
@@ -42,7 +42,7 @@ function mapStateToProps(dispatch, ownProps) {
     onBtnClick: (e) => {
       //   e.preventDefault();
 
-      dispatch(actionCreators.deleteToDo(id));
+      dispatch(remove(id));
       history.push("/");
       return;
     },

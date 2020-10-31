@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { actionCreators } from "../store";
+import { remove } from "../store";
 
 function ToDo({ text, onBtnClick, id }) {
   return (
@@ -18,7 +18,7 @@ function mapDispatchToProps(dispatch, ownProps) {
     // ownProps는 이 함수에서만(===mapDispatchToProps) state를 받아오는 기능
     onBtnClick: (e) => {
       e.preventDefault();
-      return dispatch(actionCreators.deleteToDo(ownProps.id));
+      return dispatch(remove(ownProps.id));
     },
   };
 }
